@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width"
-    />
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="./css/leaflet.css" />
@@ -37,17 +34,14 @@
     <script src="./js/rbush.min.js"></script>
     <script src="./js/labelgun.min.js"></script>
     <script src="./js/labels.js"></script>
-    <script src="./data/_0.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/yurou05/site_selection@main/static/ok/data/_0.js"></script> -->
+    <!-- <script src="./data/_0.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/yurou05/site_selection@main/static/ok/data/_0.js"></script>
     <script>
       var highlightLayer;
       function highlightFeature(e) {
         highlightLayer = e.target;
 
-        if (
-          e.target.feature.geometry.type === "LineString" ||
-          e.target.feature.geometry.type === "MultiLineString"
-        ) {
+        if (e.target.feature.geometry.type === "LineString" || e.target.feature.geometry.type === "MultiLineString") {
           highlightLayer.setStyle({
             color: "#a7dcbf",
           });
@@ -67,9 +61,7 @@
         [25.133282767296613, 121.86157456251195],
       ]);
       var hash = new L.Hash(map);
-      map.attributionControl.setPrefix(
-        '<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>'
-      );
+      map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
       var autolinker = new Autolinker({
         truncate: { length: 30, location: "smart" },
       });
@@ -81,11 +73,7 @@
         for (var i = 0; i < rows.length; i++) {
           var td = rows[i].querySelector("td.visible-with-data");
           var key = td ? td.id : "";
-          if (
-            td &&
-            td.classList.contains("visible-with-data") &&
-            feature.properties[key] == null
-          ) {
+          if (td && td.classList.contains("visible-with-data") && feature.properties[key] == null) {
             rows[i].parentNode.removeChild(rows[i]);
           }
         }
@@ -137,28 +125,18 @@
           '<table>\
                     <tr>\
                         <td colspan="2">' +
-          (feature.properties["TOWNNAME"] !== null
-            ? autolinker.link(feature.properties["TOWNNAME"].toLocaleString())
-            : "") +
+          (feature.properties["TOWNNAME"] !== null ? autolinker.link(feature.properties["TOWNNAME"].toLocaleString()) : "") +
           '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' +
-          (feature.properties["VILLNAME"] !== null
-            ? autolinker.link(feature.properties["VILLNAME"].toLocaleString())
-            : "") +
+          (feature.properties["VILLNAME"] !== null ? autolinker.link(feature.properties["VILLNAME"].toLocaleString()) : "") +
           '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">權重分數</th>\
                         <td class="visible-with-data" id="seven_results_附VILL_CODE_Score">' +
-          (feature.properties["seven_results_附VILL_CODE_Score"] !== null
-            ? autolinker.link(
-                feature.properties[
-                  "seven_results_附VILL_CODE_Score"
-                ].toLocaleString()
-              )
-            : "") +
+          (feature.properties["seven_results_附VILL_CODE_Score"] !== null ? autolinker.link(feature.properties["seven_results_附VILL_CODE_Score"].toLocaleString()) : "") +
           "</td>\
                     </tr>\
                 </table>";
@@ -170,10 +148,7 @@
       }
 
       function style__0_0(feature) {
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 0.089 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 4.49
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 0.089 && feature.properties["seven_results_附VILL_CODE_Score"] <= 4.49) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -188,10 +163,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 4.49 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 12.713
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 4.49 && feature.properties["seven_results_附VILL_CODE_Score"] <= 12.713) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -206,10 +178,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 12.713 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 23.575
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 12.713 && feature.properties["seven_results_附VILL_CODE_Score"] <= 23.575) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -224,10 +193,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 23.575 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 33.089
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 23.575 && feature.properties["seven_results_附VILL_CODE_Score"] <= 33.089) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -242,10 +208,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 33.089 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 40.686
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 33.089 && feature.properties["seven_results_附VILL_CODE_Score"] <= 40.686) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -260,10 +223,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 40.686 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 48.202
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 40.686 && feature.properties["seven_results_附VILL_CODE_Score"] <= 48.202) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -278,10 +238,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 48.202 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 56.047
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 48.202 && feature.properties["seven_results_附VILL_CODE_Score"] <= 56.047) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -296,10 +253,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 56.047 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 63.512
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 56.047 && feature.properties["seven_results_附VILL_CODE_Score"] <= 63.512) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -314,10 +268,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 63.512 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 74.334
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 63.512 && feature.properties["seven_results_附VILL_CODE_Score"] <= 74.334) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -332,10 +283,7 @@
             interactive: true,
           };
         }
-        if (
-          feature.properties["seven_results_附VILL_CODE_Score"] >= 74.334 &&
-          feature.properties["seven_results_附VILL_CODE_Score"] <= 100.0
-        ) {
+        if (feature.properties["seven_results_附VILL_CODE_Score"] >= 74.334 && feature.properties["seven_results_附VILL_CODE_Score"] <= 100.0) {
           return {
             pane: "pane__0",
             opacity: 1,
@@ -372,15 +320,7 @@
           feature: layer.feature,
           variables: {},
         };
-        layer.bindTooltip(
-          layer.feature.properties["VILLNAME"] !== null
-            ? String(
-                "<div style=\"color: #323232; font-size: 7pt; font-family: 'Open Sans', sans-serif;\">" +
-                  layer.feature.properties["VILLNAME"]
-              ) + "</div>"
-            : "",
-          { permanent: true, offset: [-0, -16], className: "css__0" }
-        );
+        layer.bindTooltip(layer.feature.properties["VILLNAME"] !== null ? String("<div style=\"color: #323232; font-size: 7pt; font-family: 'Open Sans', sans-serif;\">" + layer.feature.properties["VILLNAME"]) + "</div>" : "", { permanent: true, offset: [-0, -16], className: "css__0" });
         labels.push(layer);
         totalMarkers += 1;
         layer.added = true;
